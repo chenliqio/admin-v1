@@ -1,0 +1,8 @@
+{
+  "name": "admin-v1-fe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:chenliqio/admin-v1-fe.git",
+  "author": "karen <chenliq2022@163.com>",
+  "license": "MIT"
+}
