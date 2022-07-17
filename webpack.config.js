@@ -16,7 +16,7 @@ module.exports = {
       page     :path.resolve(__dirname, 'src/page'),
       component:path.resolve(__dirname, 'src/component'),
       util     :path.resolve(__dirname, 'src/util'),
-      user     :path.resolve(__dirname, 'src/service'),
+      service  :path.resolve(__dirname, 'src/service'),
 
     }
   },
@@ -94,7 +94,11 @@ devServer:{
   index:'/dist/index.html'
  },
  proxy :{
-  '/manage':{
+  '/manage': {
+    target:'http://admintest.happymmall.com',
+    changeOrigin : true
+  },
+  '/user/logout.do': {
     target:'http://admintest.happymmall.com',
     changeOrigin : true
   }

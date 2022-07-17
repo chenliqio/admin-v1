@@ -1,15 +1,14 @@
-import React from "react";
+
 import MUtil from 'util/mm.jsx';
 const _mm   = new MUtil();
 
 
 class User{
-    login(){
-       return 
-        _mm.request({
+    login(loginInfo){
+    return _mm.request({
             type: 'post',
-            url : 'maneger/user/login.do',
-            data:loginInfo
+            url : '/manage/user/login.do',
+            data: loginInfo
        })
     }
     // 检查登陆借口的数据是不是合法
@@ -32,9 +31,24 @@ class User{
     }
     return {
         status :true,
-        msg:'验证通过！'
+        msg    :'验证通过！'
     }
-
+  }
+   //   退出登录
+    logout(){
+        return _mm.request({
+            type: 'post',
+            url : '/user/logout.do',
+       });
     }
+    getUserList(pageNum){
+        return _mm.request({
+            type: 'post',
+            url : '/manage/user/list.do', 
+            data:{
+                pageNum : pageNum
+            }
+    });
+  }
 }
 export default User;
